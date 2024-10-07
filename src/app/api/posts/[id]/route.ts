@@ -4,12 +4,7 @@ import path from 'path';
 
 const filePath = path.resolve(process.cwd(), 'src/lib/posts.json');
 
-export async function GET(request: NextRequest, { params }: { params: { id: number } }) {
-  const id: number = Number(params.id);
-  const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  const post = data.posts.find((post: any) => post.id === id);
-  return NextResponse.json({post}, { status: 200 });
-}
+
 export async function PUT(request: NextRequest, { params }: { params: { id: number } }) {
   const id: number = Number(params.id);
   const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));

@@ -36,4 +36,3 @@ export default function PostItem({ post, deletePost, editPost }: { post: Post, d
     );
 };
 
-PostItem;
