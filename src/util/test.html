@@ -1,0 +1,228 @@
+<h2><strong>Repo</strong></h2>
+<p><strong><a href="https://classroom.github.com/a/KVB3ujZF" target="_blank" rel="noopener">https://classroom.github.com/a/KVB3ujZF</a></strong></p>
+<h2><strong>Inleiding</strong></h2>
+<p>In deze opdracht ontwikkel je een webapplicatie naar keuze. Het project biedt je de mogelijkheid om te werken met moderne technologie&euml;n zoals <strong>Next.js</strong> voor de front-end en <strong>Strapi</strong> als headless CMS met <strong>GraphQL</strong>. Je bouwt een platform met functionaliteiten zoals gebruikersregistratie, materiaalbeheer, en communicatie tussen gebruikers. Dit project daagt je uit om je vaardigheden in webontwikkeling, beveiliging, en gebruikerservaring te verbeteren.<strong></strong></p>
+<h2><strong>Projectbeschrijving</strong></h2>
+<p>Je gaat een webapplicatie ontwikkelen waarin gebruikers zich kunnen registreren, inloggen en content kunnen beheren. De focus ligt op gebruikersbeheer en het delen van content. Mogelijke thema's zijn het verhuren van materialen, het delen van recepten, of een platform voor het aanbieden van diensten. Gebruikers kunnen items toevoegen, bekijken, aanpassen en beheren, terwijl bezoekers de content kunnen verkennen en ermee kunnen interacteren.</p>
+<h3><strong>Voorbeelden van thema's:</strong></h3>
+<ul>
+    <li><strong>Verhuurplatform</strong>: Gebruikers bieden materialen aan voor verhuur, zoals gereedschap, muziekapparatuur of voertuigen.<br />Een webapplicatie genaamd "DeelDepot" te ontwikkelen, waarmee gebruikers hun eigen materiaal kunnen beheren en categoriseren.<br />De app moet ook een verhuursysteem hebben met e-mailfunctionaliteit voor communicatie tussen gebruikers.</li>
+    <li><strong>Receptenplatform</strong>: Gebruikers delen recepten en kunnen keukenapparatuur huren.</li>
+    <li><strong>Taalplatform</strong><br />De app is een taalstudie-platform waar gebruikers eigen woorden-collecties kunnen aanmaken, uploaden, en beheren. Elke collectie bevat vertalingsparen tussen twee talen, met optionele meerdere vertalingen per woord, tags, een auteur, en een beoordeling. Gebruikers kunnen de collecties van zichzelf of anderen inoefenen met functies zoals feedback op vertalingen, een timer, en voortgangspercentages. De app biedt verschillende oefenmodi zoals gemakkelijke of normale moeilijkheidsgraad, willekeurige volgorde, of omgekeerde vertalingen. Gebruikers hebben toegang tot een dashboard met scoregrafieken en gedetailleerde voortgangsstatistieken per collectie.</li>
+    <li><strong>Dienstenplatform</strong>: Gebruikers bieden diensten aan, zoals coaching, advies of technische ondersteuning.</li>
+    <li><strong>Discordclone</strong></li>
+</ul>
+<h2><strong>Vereisten</strong></h2>
+<ol>
+    <li>
+        <p><strong>🔐&nbsp;</strong><strong>Registratie en Authenticatie <br /></strong></p>
+        <ul>
+            <li>Gebruikers moeten zich kunnen registreren en inloggen met hun e-mailadres en wachtwoord.</li>
+            <li><strong>Optioneel</strong>: Inloggen via externe diensten (Google, GitHub, etc.) met behulp van <strong>OAuth 2.0</strong>.</li>
+            <li><strong>Optioneel</strong>: Implementatie van wachtwoordherstel via e-mail.</li>
+        </ul>
+        <p>&nbsp;</p>
+    </li>
+    <li>
+        <p><strong>📸&nbsp;</strong><strong>Gebruikersbeheer</strong></p>
+        <ul>
+            <li>Gebruikers kunnen hun profiel beheren (bijv. profielfoto uploaden, gegevens aanpassen).</li>
+            <li>Gebruikers kunnen content toevoegen, aanpassen en verwijderen.</li>
+            <li><strong>Dashboard</strong>: Geregistreerde gebruikers hebben toegang tot een overzicht van hun eigen content.</li>
+        </ul>
+        <p>&nbsp;</p>
+    </li>
+    <li>
+        <p><strong>Contentbeheer <br /></strong></p>
+        <ul style="list-style-type: circle;">
+            <li>Bezoekers kunnen alle content bekijken op een overzichtspagina.</li>
+            <li>Gebruikers kunnen content categoriseren en beheren (bijv. beschikbaarheid voor verhuur, categorie&euml;n voor recepten of diensten).<br /><br /></li>
+        </ul>
+    </li>
+    <li><strong>CRUD: Voorzie minimaal 1 vorm van CRUD operatie</strong>
+        <ul style="list-style-type: circle;">
+            <li>In de applicatie moet minimaal 1 CRUD operatie zitten beschikbaar voor regeristreerde gebruikers, waarbij 1 van de velden een categorie of selectie is uit opties die door een beheerder of iemand met de juiste machtigingen kan aangemaakt worden.</li>
+        </ul>
+    </li>
+    <li>
+        <p><strong>Interactie (Verplicht): Voorzie iets van interactie tussen verschillende gebruikers</strong></p>
+        <ul style="list-style-type: circle;">
+            <li>Verhuursysteem (bijvoorbeeld voor een verhuurplatform): Gebruikers kunnen aanvragen indienen voor het huren van materialen, met meldingen en goedkeuringsprocessen.</li>
+            <li>Optioneel: Implementatie van een chatfunctie voor directe communicatie tussen gebruikers.</li>
+        </ul>
+        <p>&nbsp;</p>
+    </li>
+    <li>
+        <p><strong>📋 Algemene Overzichtspagina</strong></p>
+        <ul>
+            <li>Maak een mooie landingspagina met uitleg van het project en de technische documentatie, dit wordt ook beoordeeld als documentatie op het einde van het project.</li>
+            <li>Duidelijke documentatie voor zowel gebruikers als ontwikkelaars.</li>
+            <li>Instructies voor installatie, gebruik en API-documentatie (indien van toepassing).</li>
+        </ul>
+    </li>
+    <li>
+        <p><strong>Beveiliging (Verplicht)</strong></p>
+        <ul>
+            <li>Gebruik bcrypt of een vergelijkbaar algoritme voor wachtwoordhashing.</li>
+            <li>JWT (JSON Web Tokens) voor API-beveiliging en gebruikersauthenticatie.</li>
+            <li>Zorg voor server-side validatie van alle invoer en beveiliging tegen XSS en SQL-injecties.</li>
+        </ul>
+    </li>
+    <li>
+        <p><strong>🛠 Beheerderspaneel (admin)</strong>:</p>
+        <ul>
+            <li>Beheerders hebben toegang tot alle functionaliteiten van de app.</li>
+            <li>Ze kunnen bijvoorbeeld gebruikers beheren, categorie&euml;n toevoegen/wijzigen/verwijderen en materiaal bewerken. 💼👤</li>
+        </ul>
+    </li>
+    <li>
+        <p><strong>Optionele Uitbreidingen</strong></p>
+        <ul>
+            <li><strong>Betaalmogelijkheden</strong>: Integreer een betalingsplatform (zoals Stripe of PayPal).</li>
+            <li><strong>E-mailmeldingen</strong>: Automatische meldingen via e-mail voor huuraanvragen, wachtwoordherstel, etc.</li>
+            <li><strong>Geavanceerde zoekfunctionaliteit</strong>: Maak zoekopties op basis van categorie&euml;n en filters.</li>
+        </ul>
+    </li>
+</ol>
+<h2><strong>Technische Vereisten</strong></h2>
+<ol start="7">
+    <li>
+        <p><strong>🚀 Front-end</strong>:</p>
+        <ul>
+            <li>Gebruik het Next.js-framework (14) voor de front-end.</li>
+            <li>Implementeer een aantrekkelijk en responsief ontwerp.</li>
+        </ul>
+    </li>
+    <li>
+        <p><strong>📊 Back-end</strong>:</p>
+        <ul>
+            <li>Gebruik Strapi met GraphQL voor de back-end.</li>
+            <li>Implementeer een relationele database (bijv. PostgreSQL, MySQL) om gegevens op te slaan.</li>
+        </ul>
+    </li>
+    <li><strong>🧪 Testen</strong>:
+        <ul style="list-style-type: circle;">
+            <li>Voer zowel functionele als niet-functionele tests uit om de kwaliteit van de applicatie te waarborgen.</li>
+        </ul>
+    </li>
+    <li><strong>🧑&zwj;💻 Version Control</strong>:
+        <ul style="list-style-type: circle;">
+            <li>Gebruik Git en deel de broncode via een online platform zoals GitHub.</li>
+        </ul>
+    </li>
+    <li><strong>🌐 Deployment:</strong>
+        <ul style="list-style-type: circle;">
+            <li><strong></strong><strong></strong>Deploy de applicatie op een webhostingplatform zoals Heroku, Vercel of een eigen server.</li>
+        </ul>
+    </li>
+</ol>
+<h2><strong>Optionele Taken</strong> 🌟</h2>
+<ol start="16">
+    <li>
+        <p><strong>🔍 Geavanceerde Zoekfunctionaliteit</strong>: Implementeer uitgebreide zoek- en filteropties op de algemene overzichtspagina.</p>
+    </li>
+    <li>
+        <p><strong>💬 Chatfunctionaliteit</strong>: Voeg een realtime chatfunctie toe tussen gebruikers voor directe communicatie.</p>
+    </li>
+    <li>
+        <p><strong>💳 Betaalmogelijkheden</strong>: Integreer een betalingssysteem voor huurtransacties.</p>
+    </li>
+    <li>
+        <p><strong>📧 E-mailcommunicatie</strong>:</p>
+        <ul>
+            <li>Integreer een e-mailserver voor wachtwoordherstel, goedkeuring van huuraanvragen en communicatie tussen gebruikers.</li>
+            <li>Gebruik een gratis e-mailprovider zoals SendGrid of Mailgun voor e-mailverzending.</li>
+        </ul>
+    </li>
+</ol>
+<h2><strong>Gebruikersrollen</strong></h2>
+<p><strong>1. Gebruikers (Geregistreerde Gebruikers) 👤</strong>:</p>
+<ul>
+    <li><strong>Mogelijkheden</strong>:
+        <ul>
+            <li>Registreren en inloggen met hun e-mailadres en wachtwoord.</li>
+            <li>Profielinformatie bijwerken, waaronder het toevoegen van een profielfoto.</li>
+            <li>CRUD operaties uitvoeren in bepaalde gebieden</li>
+        </ul>
+    </li>
+</ul>
+<p><strong>2. Bezoekers (Niet-geregistreerde Gebruikers) 👁️</strong>:</p>
+<ul>
+    <li><strong>Mogelijkheden</strong>:
+        <ul>
+            <li>Toegang tot de algemene overzichtspagina om beschikbare zaken te bekijken zonder de identiteit van de eigenaren te zien.</li>
+            <li>Zoeken en filteren op een bepaalde overzichtpagina (producten, gebruikers, recepten).</li>
+        </ul>
+    </li>
+</ul>
+<p><strong>3. Beheerders (Beheerders) 💼</strong>:</p>
+<ul>
+    <li><strong>Mogelijkheden</strong>:
+        <ul>
+            <li>Toegang tot alle functionaliteiten van de app.</li>
+            <li>Beheren van gebruikersaccounts, inclusief registratie- en inlogprocessen.</li>
+            <li>Toevoegen, wijzigen en verwijderen van categorie&euml;n.</li>
+            <li>Bewerken alle gegevens van zaken aangemaakt door gebruikers</li>
+            <li>Oplossen van geschillen en problemen tussen gebruikers.</li>
+        </ul>
+    </li>
+</ul>
+<p><strong>4. Moderatoren (Optionele Rol) 🕵️&zwj;♂️</strong>:</p>
+<ul>
+    <li><strong>Mogelijkheden</strong>:
+        <ul>
+            <li>Beoordelen en goedkeuren van inhoud op de website, inclusief nieuwe zaken en gebruikersaccounts.</li>
+            <li>Melden van misbruik, ongepaste inhoud of inbreuken op de communityrichtlijnen.</li>
+        </ul>
+    </li>
+</ul>
+<h2>Mogelijke pagina's</h2>
+<p><strong>Verplichte Pagina's</strong>:</p>
+<ol>
+    <li>
+        <p><strong>📝 Registratiepagina</strong>: Hier kunnen gebruikers zich registreren met hun e-mailadres en wachtwoord.</p>
+    </li>
+    <li>
+        <p><strong>🔐 Inlogpagina</strong>: Gebruikers kunnen hier inloggen met hun geregistreerde accounts.</p>
+    </li>
+    <li>
+        <p><strong>👤 Profielpagina</strong>: Gebruikers kunnen hun profielinformatie en profielfoto beheren.</p>
+    </li>
+    <li>
+        <p><strong>📊 Dashboardpagina voor Geregistreerde Gebruikers</strong></p>
+    </li>
+    <li>
+        <p><strong>📋 Algemene Overzichtspagina</strong>: Hier kunnen bezoekers alle beschikbare materialen bekijken zonder de eigenaren te identificeren.</p>
+    </li>
+    <li>
+        <p><strong>➕ Pagina voor CRUD&nbsp;</strong></p>
+    </li>
+    <li>
+        <p><strong>🔧 Beheerderspaneel</strong>: Hier hebben beheerders toegang tot alle functionaliteiten van de app.</p>
+    </li>
+    <li>
+        <p><strong>📖 Pagina voor Gebruikersdocumentatie</strong>: Deze pagina kan informatie bevatten over het gebruik van DeelDepot voor eindgebruikers.</p>
+    </li>
+    <li>
+        <p><strong>📝 Pagina voor Ontwikkelaarsdocumentatie</strong>: Hier kunnen ontwikkelaars informatie vinden over het werken met de API en de broncode van DeelDepot.</p>
+    </li>
+</ol>
+<p><strong>Optionele Pagina's</strong>:</p>
+<ol start="10">
+    <li>
+        <p><strong>💬 Chatpagina</strong>: Als chatfunctionaliteit wordt ge&iuml;mplementeerd, kunnen gebruikers hier direct met elkaar communiceren.</p>
+    </li>
+    <li>
+        <p><strong>📜 Pagina voor Algemene Voorwaarden en Privacybeleid</strong>: Bevat juridische documenten die de gebruiksvoorwaarden en privacyaspecten van DeelDepot uiteenzetten.</p>
+    </li>
+    <li>
+        <p><strong>📧 Pagina voor Contact en Ondersteuning</strong>: Hier kunnen gebruikers contact opnemen met het DeelDepot-ondersteuningsteam.</p>
+    </li>
+    <li><strong>💳 Betaalpagina</strong>: Als betalingsopties worden ge&iuml;ntegreerd, kunnen gebruikers hier betalingen voor huurtransacties verwerken.</li>
+</ol>
+<p>Houd er rekening mee dat de exacte structuur en benaming van pagina's kunnen vari&euml;ren op basis van de specifieke ontwerp- en functionele vereisten van de app. <br />De bovenstaande lijst dient als leidraad voor de mogelijke pagina's die in de applicatie kunnen worden opgenomen.</p>
+<p><strong>Beoordeling</strong>:</p>
+<ul>
+    <li>De beoordeling zal worden gebaseerd op de volledigheid en kwaliteit van de implementatie, het ontwerp, de documentatie en de beveiliging van de app. <br />Zorg ervoor dat de app voldoet aan de vereisten en een naadloze gebruikerservaring biedt.</li>
+</ul>
+<p>Veel succes met de ontwikkeling! 🚀</p>
