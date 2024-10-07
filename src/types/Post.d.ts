@@ -6,8 +6,6 @@ export type Comment = {
 
 export type Post = {
     id: number;
-    title: string;
-    body: string;
     dateAdded: string;
     user: string;
     message: string;

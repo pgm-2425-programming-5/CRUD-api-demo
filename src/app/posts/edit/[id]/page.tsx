@@ -19,9 +19,8 @@ export default function EditPost({params} : {params: {id: string}}) {
           setPost({} as Post);
           return;
         }
-        const post: Post = await res.json();
-        console.log(post);
-        setPost(post);
+        const post = await res.json();
+        setPost(post.post);
       };
       fetchPost();
     }
@@ -36,9 +35,8 @@ export default function EditPost({params} : {params: {id: string}}) {
       },
       body: JSON.stringify(post),
     });
-    redirect('/posts');
+    window.location.href = '/posts';
   };
-
   return (
     <div className="max-w-2xl mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Edit Post</h1>

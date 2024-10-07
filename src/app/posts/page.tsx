@@ -15,7 +15,7 @@ async function fetchPosts(): Promise<Post[]>{
     const data = await response.json();
     return data.posts;
 };
-
+export const fetchCache = 'force-no-store';
 export default async function PostsPage(){
     const posts = await fetchPosts();
 

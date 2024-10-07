@@ -5,7 +5,7 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import CreatePostForm from '@/app/posts/components/forms/CreatePostForm';
 import { useRouter } from 'next/navigation'
-const CreatePost = () => {
+export default function CreatePost () {
   const [title, setTitle] = useState('');
   const router = useRouter();
   const handleSubmit = async (post: Post) => {
@@ -35,4 +35,3 @@ const CreatePost = () => {
   );
 };
 
-export default CreatePost;
