@@ -1,4 +1,4 @@
-import { Post } from '@/types/Post';
+import { Comment, Post } from '@/types/Post';
 
 type Props = {
     params: {
@@ -27,7 +27,7 @@ return (
         </div>
         <div>
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Comments</h2>
-            {post.comments.map((comment, index) => (
+            {post.comments.map((comment: Comment, index: number) => (
                 <div key={index} className="mb-4 p-4 border rounded-lg bg-gray-50">
                     <p className="font-semibold text-gray-800">{comment.user}</p>
                     <p className="text-gray-700">{comment.message}</p>
