@@ -14,14 +14,3 @@ export async function GET() {
   }
 }
 
-export async function POST(req: Request) {
-  try {
-    const newPost = await req.json();
-    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    data.posts.push(newPost);
-    fs.writeFileSync(filePath, JSON.stringify(data));
-    return NextResponse.json(newPost, { status: 201 });
-  } catch (error) {
-    return NextResponse.json({ error: 'Failed to write data' }, { status: 500 });
-  }
-}
