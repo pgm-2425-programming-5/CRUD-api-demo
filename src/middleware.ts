@@ -27,6 +27,20 @@ export default withAuth(
           }
           return true;
         }
+        if (req.nextUrl.pathname.startsWith("/admin")) {
+          console.log("Checking if user is authorized to access this route");
+          // console.log("Token:", token);
+          if (!token) {
+            console.error("No token found, user is not authorized");
+            return false;
+          }
+          if (token.role !== "admin") {
+            console.error("User is not authorized to access this route");
+            return false;
+          }
+          return true;
+        }
+        // Allow access to all other
         return true;
       },
     },
@@ -35,5 +49,5 @@ export default withAuth(
 
 // Specify the matcher for protected routes
 export const config = {
-  matcher: ["/posts/edit/:path*"],
+  matcher: ["/posts/edit/:path*", "/admin/:path*"],
 };

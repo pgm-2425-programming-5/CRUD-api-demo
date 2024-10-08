@@ -5,4 +5,5 @@ export type User = {
     email: string;
     password: string | null; // Hashed password
     githubId: string | null;
+    role: "user" | "admin";
   }
