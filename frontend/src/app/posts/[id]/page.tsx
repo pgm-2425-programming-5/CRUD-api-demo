@@ -1,24 +1,66 @@
-import { Comment, Post } from '@/types/Post';
+import React from 'react';
+import { Post } from '@/types/Post';
 import PostItem from '../components/PostItem';
+import { gql, request } from 'graphql-request';
+import { getServerSession } from "next-auth/next"
+import { authOptions } from '@/lib/authOptions';
+const STRAPI_GRAPHQL_URL = process.env.STRAPI_GRAPHQL_URL || 'http://localhost:1337/graphql';
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
+
+
+const STRAPI_API_TOKEN = process.env.STRAPI_API_TOKEN || '';
 
 type Props = {
     params: {
         id: string;
-    };
+
+    },
+    req: any;
 };
 
-export default async function PostPage ({ params }: Props) {
-    async function getPost() {
-        const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
-        const response = await fetch(`${baseUrl}/api/posts/${params.id}`);
-        const data = await response.json();
-        return data.post;
+
+
+async function fetchPost(id: string, req: any): Promise<Post> {
+    const query = gql`
+        query Query($documentId: ID!) {
+  post(documentId: $documentId) {
+    amountLikes
+    comments {
+      dateAdded
+      message
+      users_permissions_user {
+        username
+      }
     }
-    const post = await getPost();
+    user {
+      username
+    }
+    message
+    dateAdded
+    documentId
+  }
+}
+    `;
+    const cookieStore = cookies();
+    const sessionToken = cookieStore.get('next-auth.jwt-token');
+    console.log(sessionToken, 'sessionToken');
+    const headers = {
+        Authorization: `Bearer ${sessionToken}`,
+    };
+    if (!sessionToken) {
+        redirect('/login' );
+    }
+    const variables = { "documentId": id };
+    const response: { post: Post } = await request(STRAPI_GRAPHQL_URL, query, variables, headers);
+    console.log(response, 'response');
+    return response.post;
+}
 
+export default async function PostPage({ params, req }: Props) {
+    const post = await fetchPost(params.id, req);
 
-return (
-    <PostItem key={post.id} post={post} />
-);
-};
-
+    return (
+        <PostItem key={post.documentId} post={post} />
+    );
+}

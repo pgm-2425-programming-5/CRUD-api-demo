@@ -8,7 +8,7 @@ export type Comment = {
 };
 
 export type Post = {
-    createdAt: string;
+    createdAt: Date;
     documentId: string;
     message: string;
     user: {

@@ -21,12 +21,15 @@ export default function CreatePostForm({ post, onSubmit } : CreatePostProps) {
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         const newPost: Post = {
-            id: post?.id || Date.now(),
-            dateAdded: post?.dateAdded || new Date().toISOString(),
-            user,
+            documentId: post!.documentId,
+            dateAdded: post?.dateAdded || new Date(),
+            user: {
+                username: post?.user?.username || '',
+            },
             message,
             amountLikes: post?.amountLikes || 0,
             comments: post?.comments || [],
+            createdAt: post?.createdAt || new Date(),
         };
         onSubmit(newPost);
     }
@@ -38,7 +41,7 @@ export default function CreatePostForm({ post, onSubmit } : CreatePostProps) {
                 <input
                     type="text"
                     id="user"
-                    value={user}
+                    value={user.toString()}
                     onChange={(e) => setUser(e.target.value)}
                     className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />

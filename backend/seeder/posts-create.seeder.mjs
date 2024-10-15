@@ -4,7 +4,6 @@ import posts from './data/posts.mjs';
 const mutationCreatePost = `
   mutation createP($data: PostInput!) {
   createPost(data: $data) {
-    postId
     amountLikes
     message
     comments {
@@ -30,8 +29,6 @@ query Query {
   const getFirstUser = async () => {
     try {
       const {usersPermissionsUsers } = await client.request(queryFirstUser);
-      console.log(usersPermissionsUsers)
-
       if (usersPermissionsUsers.length === 0) {
         throw new Error("No users found in the database");
       }
@@ -46,7 +43,7 @@ query Query {
    * Create a Post (Local Provider)
    */
   const createPost = async ({ postId, dateAdded, user, message, amountLikes, comments }) => {
-    let data = {postId, "data": { dateAdded, message, amountLikes} };
+    let data = {"data": { dateAdded, message, amountLikes} };
     try {
       const { createPost } = await client.request(mutationCreatePost, data);
 
@@ -68,9 +65,8 @@ query Query {
       const firstUserId = await getFirstUser();
       for (const post of posts) {
         // eslint-disable-next-line no-await-in-loop
-        const { id, dateAdded, message, amountLikes, comments } = post;
+        const { dateAdded, message, amountLikes, comments } = post;
         await createPost({
-          postId: id,
           dateAdded: new Date(dateAdded).toISOString(),
           user: firstUserId,
           message,

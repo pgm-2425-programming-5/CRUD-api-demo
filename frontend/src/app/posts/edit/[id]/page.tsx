@@ -13,7 +13,6 @@ export default function EditPost({params} : {params: {id: string}}) {
       const fetchPost = async () => {
         const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
         const res = await fetch(`${baseUrl}/api/posts/${id}`);
-        console.log(res);
         if (!res.ok) {
           console.log('Failed to fetch post');
           setPost({} as Post);

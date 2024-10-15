@@ -6,7 +6,6 @@ const filePath = path.resolve(process.cwd(), 'src/lib/posts.json');
 
 export async function GET() {
   try {
-    console.log(filePath);
     const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     return NextResponse.json(data, { status: 200 });
   } catch (error) {

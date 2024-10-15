@@ -2,6 +2,7 @@ import bcrypt from 'bcrypt';
 import client from './config/graphql_client.mjs';
 import { faker } from '@faker-js/faker';
 import { generateValueBetweenMinAndMax } from './lib/utils.mjs';
+// import users from './path/to/your/users.js'; // Adjust the path to your users.js file
 
 const mutationCreateUser = `
   mutation CREATE_USER($data: UsersPermissionsUserInput!) {
@@ -42,20 +43,9 @@ const mutationCreateUser = `
   };
 
   /*
-   * Create a Users via promises
+   * Create Users via promises
    */
   const createUsers = async (n = 20) => {
-    // Create default user
-    await createUser({
-      firstname: 'Tim',
-      lastname: 'Timmers',
-      username: 'tim',
-      email: 'tim@example.com',
-      password: 'artevelde',
-      isAdmin: false,
-      role: '1', // Authenticated
-    });
-
     // Create random users
     for (let i = 0; i < n; i++) {
       const gender = generateValueBetweenMinAndMax(0, 1);
@@ -63,14 +53,12 @@ const mutationCreateUser = `
       const lastname = faker.person.lastName(gender);
 
       const newUser = {
-        firstname,
-        lastname,
         username: `${firstname.toLowerCase()}.${Date.now()}`,
         email: faker.internet.exampleEmail({ firstname, lastname }),
         // password: bcrypt.hashSync('artevelde', 10),
         password: 'Pa$$w0rd!',
-        isAdmin: false,
-        role: '1', // Authenticated
+        role: '2', // Authenticated
+        confirmed: true,
       };
       // eslint-disable-next-line no-await-in-loop
       await new Promise((resolve) => setTimeout(resolve, 300 * i)).then(() =>
@@ -79,8 +67,30 @@ const mutationCreateUser = `
     }
   };
 
+  const createUsersFromFile = async () => {
+    // Create provided users
+    for (const user of users) {
+      const newUser = {
+        username: user.username,
+        email: user.email,
+        password: user.password,
+        role: '1', // Authenticated
+      };
+      // eslint-disable-next-line no-await-in-loop
+      await createUser(newUser);
+    }
+  }
+
+  const createAdmins = async (n = 1) => {
+    for (let i = 0; i < n; i++) {
+      createUser(1, true);
+    }
+  };
+
   /*
    * Create Models in Auth
    */
-  await createUsers(30);
+  await createUsers(1);
+  await createUsersFromFile();
+
 })();

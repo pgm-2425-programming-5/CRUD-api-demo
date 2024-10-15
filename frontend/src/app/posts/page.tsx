@@ -35,7 +35,6 @@ async function fetchPosts(): Promise<Post[]> {
         Authorization: `Bearer ${STRAPI_API_TOKEN}`,
     };
     const response: { posts: Post[] } = await request(STRAPI_GRAPHQL_URL, query, {}, headers);
-    console.log('Posts:', response.posts);
     return response.posts;
 }
 

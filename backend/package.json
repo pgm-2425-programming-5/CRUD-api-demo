@@ -9,20 +9,19 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "strapi": "strapi",
-    "seed": "strapi seed",
-    "seed:users": "node seeder/users-create.seeder.js --debug",
-    "seed:posts": "node seeder/posts-create.seeder.mjs --debug"
+    "seed:users": "node seeder/users-create.seeder.mjs",
+    "seed:posts": "node seeder/posts-create.seeder.mjs"
   },
   "dependencies": {
+    "@faker-js/faker": "^9.0.3",
     "@strapi/plugin-cloud": "5.0.6",
     "@strapi/plugin-graphql": "^5.0.6",
     "@strapi/plugin-users-permissions": "5.0.6",
     "@strapi/strapi": "5.0.6",
-    "@types/qs": "^6.9.16",
     "awesome-graphql-client": "^2.0.0",
-    "better-sqlite3": "9.4.3",
-    "graphql-request": "^7.1.0",
-    "qs": "^6.13.0",
+    "bcrypt": "^5.1.1",
+    "better-sqlite3": "^11.3.0",
+    "pg": "8.8.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
@@ -39,6 +38,6 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "2ce2bf6e-9507-4601-b69a-2720a171df1a"
+    "uuid": "cfb498b4-aa82-41af-9991-ada9fcc16738"
   }
 }

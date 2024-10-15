@@ -6,6 +6,9 @@ import React from 'react';
 export default function LogoutButton() {
 
     function handleSignOut() {
+        // Remove the JWT token from the cookie
+        
+        document.cookie = 'next-auth.jwt-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         signOut();
     }
     return (

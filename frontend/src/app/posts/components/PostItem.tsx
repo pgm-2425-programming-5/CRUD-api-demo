@@ -23,7 +23,7 @@ export default function PostItem({ post, deletePost, editPost }: PostItemProps) 
                     <p className="text-sm text-gray-500">{new Date(post.dateAdded).toLocaleDateString()}</p>
                 </div>
             </div>
-            <p className="text-gray-700 mb-4">{post.message}</p>
+            <p className="text-gray-700 mb-4"><a href={`/posts/${post.documentId}`}>{post.message}</a></p>
             <p className="text-gray-500 mb-4">{post.amountLikes} 👍</p>
             <div className="flex space-x-4 mb-4">
                 {editPost && (
