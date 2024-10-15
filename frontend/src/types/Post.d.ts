@@ -1,14 +1,20 @@
 export type Comment = {
-    user: string;
+    dateAdded: Date;
+    documentId: string;
     message: string;
-    dateAdded: string;
+    users_permissions_user: {
+        username: string;
+    };
 };
 
 export type Post = {
-    id: number;
-    dateAdded: string;
-    user: string;
+    createdAt: string;
+    documentId: string;
     message: string;
+    user: {
+        username: string;
+    };
     amountLikes: number;
     comments: Comment[];
+    dateAdded: Date;
 };

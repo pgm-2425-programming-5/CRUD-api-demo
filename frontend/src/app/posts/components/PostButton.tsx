@@ -3,9 +3,9 @@ import React from 'react';
 
 interface ButtonProps {
     color: string;
-    onClick: (postId: number) => void;
+    onClick: (postId: string) => void;
     children: React.ReactNode;
-    postId: number;
+    postId: string;
 }
 
 export default function PostButton({ color, onClick, children, postId } : ButtonProps) {
