@@ -38,27 +38,6 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" },
         role: { label: "Role", type: "role" },
       },
-      // old
-      // async authorize(credentials) {
-      //   if (!credentials) {
-      //     return null;
-      //   }
-
-      //   const { email, password } = credentials;
-
-      //   const user = users.find((user) => user.email === email);
-
-      //   if (user && user.password) {
-      //     const isValid = await bcrypt.compare(password, user.password);
-      //     console.log("Password is valid:", isValid);
-      //     if (isValid) {
-      //       return { id: user.id, name: user.name, email: user.email, role: user.role };
-      //     }
-      //   }
-
-      //   // If no user is found or password is incorrect
-      //   return null;
-      // },
       async authorize(credentials) {
         console.log("credentials", credentials);
         const strapiResponse = await fetch(
