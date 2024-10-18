@@ -90,7 +90,7 @@ const mutationCreateUser = `
   /*
    * Create Models in Auth
    */
-  await createUsers(1);
-  await createUsersFromFile();
+  await createUsers(30);
+  // await createUsersFromFile();
 
 })();

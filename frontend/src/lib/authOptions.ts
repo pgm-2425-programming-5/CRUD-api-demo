@@ -98,8 +98,7 @@ export const authOptions: NextAuthOptions = {
         // token = { ...token, ...user }
       }
       if (account) {
-        if (account.provider
-          === "google" || account.provider === "github") {
+        if (account.provider === "google" || account.provider === "github") {
           try {
             const strapiResponse = await fetch(
               `${process.env.NEXT_PUBLIC_API_URL}/api/auth/${account.provider}/callback?access_token=${account.access_token}`,
@@ -115,12 +114,12 @@ export const authOptions: NextAuthOptions = {
             // name and email will already be on here
             token.strapiToken = strapiLoginResponse.jwt;
             // Set cookie with the JWT token
-            const cookieOptions = {
-              httpOnly: true,
-              secure: process.env.NODE_ENV === 'production',
-              maxAge: 60 * 60 * 24 * 7, // 1 week
-              path: '/',
-            };
+            // const cookieOptions = {
+            //   httpOnly: true,
+            //   secure: process.env.NODE_ENV === 'production',
+            //   maxAge: 60 * 60 * 24 * 7, // 1 week
+            //   path: '/',
+            // };
             console.log("cookieOptions", strapiLoginResponse.jwt);
             const cookieStore = cookies();
             cookieStore.set('next-auth.jwt-token', strapiLoginResponse.jwt);
@@ -134,6 +133,7 @@ export const authOptions: NextAuthOptions = {
         } 1
 
       }
+      console.log("token", token);
       return token;
     },
     async session({ session, token }) {
