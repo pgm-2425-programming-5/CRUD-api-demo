@@ -8,12 +8,12 @@ interface Props {
   user: User;
 }
 
-const HelloMessage: React.FC<Props> = ({ user }) => {
+function HelloMessage({ user }: Props) {
   return (
     <div>
       <h1>Hello, {user.name}!</h1>
     </div>
   );
-};
+}
 
 export default HelloMessage;
