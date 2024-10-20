@@ -8,8 +8,9 @@ export default () => ({
   },
   "graphql": {
     enabled: true,
+    endpoint: "/graphql",
     config: {
-      playgroundAlways: true,
+      playgroundAlways: false,
     },
   },
 });
