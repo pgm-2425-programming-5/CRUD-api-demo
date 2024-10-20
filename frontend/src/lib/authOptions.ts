@@ -21,8 +21,6 @@ type StrapiLoginResponseT = {
     role: string;
   };
 };
-import { users } from "./users";
-const cookie = require('cookie');
 
 export const authOptions: NextAuthOptions = {
   // added
