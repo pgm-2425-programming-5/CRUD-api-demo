@@ -2,10 +2,10 @@
 
 import React, { FormEvent } from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
-import LoginButton from './SignUpButton'; // Adjust the path as necessary
+import LoginButton from './buttons/SignUpButton'; // Adjust the path as necessary
 import { authenticate } from '@/lib/loginActions';
 import signUpAction from './SignUpAction';
-import PendingSubmitButton from '../PendingSubmitButton';
+import PendingSubmitButton from './buttons/PendingSubmitButton'; // Adjust the path as necessary
 
 type InputErrorsT = {
     username?: string[];

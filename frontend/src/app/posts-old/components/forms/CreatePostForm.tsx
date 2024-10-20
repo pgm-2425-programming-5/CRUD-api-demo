@@ -8,7 +8,7 @@ type CreatePostProps = {
 };
 
 export default function CreatePostForm({ post, onSubmit } : CreatePostProps) {
-    const [user, setUser] = useState(post?.user || '');
+    const [user, setUser] = useState(post?.user || { username: '' });
     const [message, setMessage] = useState(post?.message || '');
 
     useEffect(() => {
@@ -22,11 +22,13 @@ export default function CreatePostForm({ post, onSubmit } : CreatePostProps) {
         e.preventDefault();
         const newPost: Post = {
             id: post?.id || Date.now(),
-            dateAdded: post?.dateAdded || new Date().toISOString(),
-            user,
+            dateAdded: post?.dateAdded || new Date(),
+            user: { username: user.username },
             message,
             amountLikes: post?.amountLikes || 0,
             comments: post?.comments || [],
+            createdAt: post?.createdAt || new Date(),
+            documentId: ''
         };
         onSubmit(newPost);
     }
@@ -38,8 +40,8 @@ export default function CreatePostForm({ post, onSubmit } : CreatePostProps) {
                 <input
                     type="text"
                     id="user"
-                    value={user}
-                    onChange={(e) => setUser(e.target.value)}
+                    value={user.username}
+                    onChange={(e) => setUser({ ...user, username: e.target.value })}
                     className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
             </div>

@@ -2,7 +2,7 @@
 
 import React, { FormEvent } from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
-import LoginButton from './LoginButton'; // Adjust the path as necessary
+import LoginButton from './buttons/LoginButton'; // Adjust the path as necessary
 import {authenticate} from '@/lib/loginActions';
 
 

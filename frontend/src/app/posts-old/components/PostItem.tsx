@@ -19,7 +19,7 @@ export default function PostItem({ post, deletePost, editPost }: PostItemProps) 
             <div className="flex items-center mb-4">
                 {/* <img src={post.userAvatar} alt={post.user} className="w-10 h-10 rounded-full mr-4" /> */}
                 <div>
-                    <h2 className="text-lg font-semibold">{post.user}</h2>
+                    <h2 className="text-lg font-semibold">{post.user.username}</h2>
                     <p className="text-sm text-gray-500">{new Date(post.dateAdded).toLocaleDateString()}</p>
                 </div>
             </div>

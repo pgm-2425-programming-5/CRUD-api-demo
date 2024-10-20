@@ -18,4 +18,5 @@ export type Post = {
     amountLikes: number;
     comments: Comment[];
     dateAdded: Date;
+    id: number;
 };

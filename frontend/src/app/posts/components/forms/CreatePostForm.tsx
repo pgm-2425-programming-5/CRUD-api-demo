@@ -30,6 +30,7 @@ export default function CreatePostForm({ post, onSubmit } : CreatePostProps) {
             amountLikes: post?.amountLikes || 0,
             comments: post?.comments || [],
             createdAt: post?.createdAt || new Date(),
+            id: 0
         };
         onSubmit(newPost);
     }
