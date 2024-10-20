@@ -1,9 +1,6 @@
-import React from 'react';
 import { Post } from '@/types/Post';
 import PostItem from '../components/PostItem';
 import { gql, request } from 'graphql-request';
-import { getServerSession } from "next-auth/next"
-import { authOptions } from '@/lib/authOptions';
 const STRAPI_GRAPHQL_URL = process.env.STRAPI_GRAPHQL_URL || 'http://localhost:1337/graphql';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
