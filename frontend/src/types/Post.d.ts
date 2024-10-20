@@ -1,4 +1,5 @@
 export type Comment = {
+    user: ReactNode;
     dateAdded: Date;
     documentId: string;
     message: string;
