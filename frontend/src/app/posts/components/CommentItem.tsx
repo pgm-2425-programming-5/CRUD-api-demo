@@ -1,4 +1,3 @@
-import React from 'react';
 import { Comment } from '@/types/Post';
 export default function CommentItem({ comment, index } : { comment: Comment, index: number }) {
     return (

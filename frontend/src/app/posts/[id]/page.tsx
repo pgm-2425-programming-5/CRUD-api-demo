@@ -18,7 +18,7 @@ type Props = {
 
 
 
-async function fetchPost(id: string, req: any): Promise<Post> {
+async function fetchPost(id: string): Promise<Post> {
     const query = gql`
         query Query($documentId: ID!) {
   post(documentId: $documentId) {
@@ -54,8 +54,8 @@ async function fetchPost(id: string, req: any): Promise<Post> {
     return response.post;
 }
 
-export default async function PostPage({ params, req }: Props) {
-    const post = await fetchPost(params.id, req);
+export default async function PostPage({ params }: Props) {
+    const post = await fetchPost(params.id);
 
     return (
         <PostItem key={post.documentId} post={post} />
