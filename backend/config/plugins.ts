@@ -12,7 +12,4 @@ export default () => ({
       playgroundAlways: true,
     },
   },
-  "apollo-sandbox": {
-    enabled: true,
-  },
 });
