@@ -5,7 +5,7 @@
 import { signIn } from "next-auth/react";
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import SignUpForm from "./components/SignUpForm";
+import SignUpForm from "@/components/SignUpForm";
 import { authenticate, authenticateThirdParty } from "@/lib/loginActions";
 
 export default function Login() {

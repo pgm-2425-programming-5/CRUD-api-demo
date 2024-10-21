@@ -1,9 +1,16 @@
 export default () => ({
-    "users-permissions": {
+  "users-permissions": {
     config: {
       register: {
         allowedFields: ["nickname"],
       },
+    },
+  },
+  "graphql": {
+    enabled: true,
+    endpoint: "/graphql",
+    config: {
+      playgroundAlways: false,
     },
   },
 });
